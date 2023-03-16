@@ -1,0 +1,23 @@
+:root {
+  --tiny-radius: 16px;
+  --tiny-opacity: 1;
+  --tiny-size: 60px;
+  --tiny-gap-x:20px;
+  --tiny-gap-y:20px;
+}
+.mx-context-menu{
+  background-color: transparent !important;
+  backdrop-filter: blur(5px);
+}
+
+.mx-context-menu-item.open{
+  background-color: transparent !important;
+}
+
+.mx-context-menu-item:hover{
+  background-color: transparent !important;
+  backdrop-filter: none;
+}
+.mx-context-menu-items{
+  backdrop-filter: blur(5px);
+}
