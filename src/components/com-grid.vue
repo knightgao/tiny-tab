@@ -1,12 +1,22 @@
 <script setup >
 import ContextMenu from '@imengyu/vue3-context-menu';
-import { ref } from 'vue';
+import { computed, ref, watch,provide, readonly } from 'vue';
 
-const comStyle = ref({
-    "gridColumnStart": "span 1",
-    "gridRowStart": "span 1"
+const isShow = ref(true)
+
+const gridSize = ref({
+    gridColumn:1,
+    gridRow:1,
 })
 
+const comStyle = computed(
+    ()=>{
+        return {
+            "gridColumnStart": `span ${gridSize.value.gridColumn}`,
+            "gridRowStart": `span ${gridSize.value.gridRow}`
+        }
+    }
+)
 const onContextMenu = (e) => {
     //prevent the browser's default menu
     e.preventDefault();
@@ -18,7 +28,7 @@ const onContextMenu = (e) => {
             {
                 label: "删除",
                 onClick: () => {
-
+                    isShow.value = false;
                 }
             },
             {
@@ -26,27 +36,33 @@ const onContextMenu = (e) => {
                 children: [
                     {
                         label: "1*1", onClick: () => {
-                            comStyle.value.gridColumnStart = "span 1"
-                            comStyle.value.gridRowStart = "span 1"
+                            gridSize.value.gridColumn = 1
+                            gridSize.value.gridRow = 1
                         }
                     },
                     {
                         label: "1*2", onClick: () => {
-                            comStyle.value.gridColumnStart = "span 2"
-                            comStyle.value.gridRowStart = "span 1"
+                            gridSize.value.gridColumn = 2
+                            gridSize.value.gridRow = 1
                             
                         }
                     },
                     {
                         label: "2*1", onClick: () => {
-                            comStyle.value.gridColumnStart = "span 1"
-                            comStyle.value.gridRowStart = "span 2"
+                            gridSize.value.gridColumn = 1
+                            gridSize.value.gridRow = 2
                         }
                     },
                     {
                         label: "2*2", onClick: () => {
-                            comStyle.value.gridColumnStart = "span 2"
-                            comStyle.value.gridRowStart = "span 2"
+                            gridSize.value.gridColumn = 2
+                            gridSize.value.gridRow = 2
+                        }
+                    },
+                    {
+                        label: "2*4", onClick: () => {
+                            gridSize.value.gridColumn = 4
+                            gridSize.value.gridRow = 2
                         }
                     },
                 ]
@@ -54,10 +70,14 @@ const onContextMenu = (e) => {
         ]
     });
 }
+
+provide("gridColumn", computed(()=>gridSize.value.gridColumn)  )
+provide("gridRow",computed(()=>gridSize.value.gridRow) )
+
 </script>
 
 <template>
-    <div @contextmenu.prevent="onContextMenu" class="com-grid" :style="comStyle">
+    <div v-if="isShow" @contextmenu.prevent="onContextMenu" class="com-grid" :style="comStyle">
         <slot name="default"></slot>
     </div>
 </template>

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@imengyu/vue3-context-menu": "^1.2.3",
+    "dayjs": "^1.11.7",
+    "pinia": "^2.0.33",
     "sass": "^1.59.3",
     "vue": "^3.2.47"
   },

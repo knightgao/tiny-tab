@@ -1,17 +1,26 @@
 <script setup>
+import Love from '../components/love.vue';
 import photo from '../components/photo.vue';
+import comGrid from '../components/com-grid.vue';
 </script>
 
 <template>
     <div class="layer">
-        <photo></photo>
-        <photo></photo>
-        <photo></photo>
-        <photo></photo>
-        <photo></photo>
-        <photo></photo>
-        <photo></photo>
-        <photo></photo>
+        <com-grid>
+            <Love></Love>
+        </com-grid>
+        <com-grid>
+            <photo></photo>
+        </com-grid>
+        <com-grid>
+            <photo></photo>
+        </com-grid><com-grid>
+            <photo></photo>
+        </com-grid><com-grid>
+            <photo></photo>
+        </com-grid><com-grid>
+            <photo></photo>
+        </com-grid>
     </div>
 </template>
 
