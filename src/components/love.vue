@@ -1,5 +1,4 @@
 <script setup>
-import comGrid from './com-grid.vue';
 import { useConfigStore } from "../store/config";
 import dayjs from 'dayjs';
 import { computed, inject, watch } from 'vue';
