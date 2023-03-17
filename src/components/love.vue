@@ -18,7 +18,7 @@ const gridRow = inject("gridRow");
 // 设置大小
 const size = computed(
     ()=>{
-        return gridRow.value > 1 ? "default" : "mini"
+        return (gridRow.value === 1 || gridColumn.value === 1) ? "mini" : "default"
     }
 )
 
