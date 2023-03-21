@@ -6,5 +6,6 @@ import com from './layers/com.vue';
   <com></com>
 </template>
 
-<style scoped>
+<style>
+
 </style>

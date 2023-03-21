@@ -2,23 +2,33 @@
   --tiny-radius: 16px;
   --tiny-opacity: 1;
   --tiny-size: 60px;
-  --tiny-gap-x:20px;
-  --tiny-gap-y:20px;
-  
+  --tiny-gap-x: 20px;
+  --tiny-gap-y: 20px;
+  --tiny-nameSize: 12px;
+  --tiny-nameColor: #fff;
 }
-.mx-context-menu{
+
+.mx-context-menu {
   background-color: transparent !important;
   backdrop-filter: blur(5px);
 }
 
-.mx-context-menu-item.open{
+.mx-context-menu-item.open {
   background-color: transparent !important;
 }
 
-.mx-context-menu-item:hover{
+.mx-context-menu-item:hover {
   background-color: transparent !important;
   backdrop-filter: none;
 }
-.mx-context-menu-items{
+
+.mx-context-menu-items {
   backdrop-filter: blur(5px);
+}
+
+body {
+  margin: 0;
+  border: 0;
+  background-image: linear-gradient(to right, #7A88FF, #7AFFAF);
+  height: 100vh;
 }

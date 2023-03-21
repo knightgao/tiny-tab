@@ -1,8 +1,9 @@
 <script setup >
 import ContextMenu from '@imengyu/vue3-context-menu';
-import { computed, ref, watch,provide, readonly } from 'vue';
+import { computed, ref,provide } from 'vue';
 
-const isShow = ref(true)
+const isShow = ref(true);
+
 
 const gridSize = ref({
     gridColumn:1,
@@ -84,14 +85,8 @@ provide("gridRow",computed(()=>gridSize.value.gridRow) )
 
 <style lang="scss">
 .com-grid {
-    border-radius: var(--tiny-radius);
-    opacity: var(--tiny-opacity);
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    border: 1px solid #0000001a;
-    box-shadow: 0 0 5px #0000001a;
-    transition: .2s;
     cursor: pointer;
 }
 </style>
