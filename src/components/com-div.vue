@@ -1,5 +1,4 @@
 <script setup >
-import { defineProps } from 'vue';
 
 const props = defineProps(['name'])
 
@@ -31,8 +30,9 @@ const props = defineProps(['name'])
         border: 1px solid #0000001a;
         box-shadow: 0 0 5px #0000001a;
         transition: .2s;
-        min-height: 60px;
+        height: 60px;
         background-color: white;
+        flex-grow: 10;
     }
 
     &-text {
