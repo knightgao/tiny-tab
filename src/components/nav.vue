@@ -18,13 +18,21 @@ const config = computed(
     }
 )
 
+const style = computed(
+    () => {
+        return {
+            "background-image": `url(${config.value.iconUrl})`,
+        }
+    }
+)
+
 
 </script>
 
 <template>
     <div class="nav">
         <a rel="noopener noreferrer" target="_blank" :href="config.targetUrl">
-            <img class="nav-img" :src="config.iconUrl" alt="">
+            <div class="nav-img" :style="style"></div>
         </a>
     </div>
 </template>
@@ -34,9 +42,13 @@ const config = computed(
 .nav {
     width: 100%;
     height: 100%;
-    .nav-img{
+
+    .nav-img {
         width: 100%;
         height: 100%;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
     }
 }
 </style>
