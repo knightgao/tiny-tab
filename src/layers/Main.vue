@@ -29,7 +29,6 @@ import {menuJson} from '../menuConfig.js';
     position: relative;
     display: grid;
     user-select: none;
-    min-height: 50dvh;
     grid-template-columns: repeat(auto-fill, var(--tiny-size));
     grid-template-rows: repeat(auto-fill, var(--tiny-size));
     grid-auto-flow: dense;

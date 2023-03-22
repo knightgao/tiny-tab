@@ -46,36 +46,35 @@ const gridClass = computed(
 
     &-text {
         text-align: center;
-        margin-top: 5px;
         height: var(--tiny-gap-x);
         color: var(--tiny-nameColor);
         font-size: var(--tiny-nameSize);
-        line-height: 1.1;
         filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, .8));
         text-overflow: ellipsis;
         white-space: nowrap;
         display: block;
         overflow: hidden;
+        line-height: var(--tiny-gap-x);
     }
 }
 
 .grid-1-1 {
-    height: calc(var(--tiny-size) + var(--tiny-gap-x))
+    min-height: calc(var(--tiny-size) + var(--tiny-gap-x))
 }
 
 .grid-2-1 {
-    height: calc(var(--tiny-size) + var(--tiny-gap-x))
+    min-height: calc(var(--tiny-size) + var(--tiny-gap-x))
 }
 
 .grid-1-2 {
-    height: calc(var(--tiny-size)*2 + var(--tiny-gap-x))
+    min-height: calc(var(--tiny-size)*2 + var(--tiny-gap-x))
 }
 
 .grid-2-2 {
-    height: calc(var(--tiny-size)*2 + var(--tiny-gap-x))
+    min-height: calc(var(--tiny-size)*2 + var(--tiny-gap-x))
 }
 
 .grid-4-2 {
-    height: calc(var(--tiny-size)*2 + var(--tiny-gap-x))
+    min-height: calc(var(--tiny-size)*2 + var(--tiny-gap-x))
 }
 </style>
