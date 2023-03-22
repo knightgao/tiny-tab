@@ -11,16 +11,27 @@ const gridClass = computed(
         return `grid-${gridColumn.value}-${gridRow.value}`
     })
 
+const gridStyle = computed(
+    () => {
+        return {
+            minHeight:`calc(var(--tiny-size) * ${gridRow.value})`
+        }
+    })
+
 </script>
 
 <template>
     <div class="com-div" :class="[gridClass]">
-        <div class="com-div-border">
+        <div class="com-div-border" :style="gridStyle">
             <slot name="default"></slot>
         </div>
 
         <slot name="buttom">
-            <div class="com-div-text" :title="props.name" v-if="props.name">{{ props.name }}</div>
+            <div class="com-div-text" :title="props.name" v-if="props.name">
+                <span>
+                    {{ props.name }}
+                </span>
+                </div>
         </slot>
     </div>
 </template>
@@ -40,21 +51,23 @@ const gridClass = computed(
         box-shadow: 0 0 5px #0000001a;
         transition: .2s;
         background-color: white;
-        flex-grow: 10;
     }
 
 
     &-text {
         text-align: center;
         height: var(--tiny-gap-x);
+        line-height: var(--tiny-gap-x);
         color: var(--tiny-nameColor);
         font-size: var(--tiny-nameSize);
         filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, .8));
         text-overflow: ellipsis;
         white-space: nowrap;
         display: block;
-        overflow: hidden;
-        line-height: var(--tiny-gap-x);
+        
+        span{
+            overflow: hidden;
+        }
     }
 }
 
