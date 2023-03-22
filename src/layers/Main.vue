@@ -29,12 +29,12 @@ import {menuJson} from '../menuConfig.js';
     position: relative;
     display: grid;
     user-select: none;
-    min-height: 50vh;
+    min-height: 50dvh;
     grid-template-columns: repeat(auto-fill, var(--tiny-size));
     grid-template-rows: repeat(auto-fill, var(--tiny-size));
     grid-auto-flow: dense;
     grid-gap: var(--tiny-gap-x) var(--tiny-gap-y);
-    padding: 2vh;
+    padding: 2dvh;
     overflow-y: auto;
 }
 </style>

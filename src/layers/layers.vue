@@ -23,7 +23,7 @@ import Footer from './Footer.vue';
         "nav"
         "footer";
     gap: 2px;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .header {

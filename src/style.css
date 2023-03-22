@@ -32,5 +32,5 @@ body {
   margin: 0;
   border: 0;
   background-image: linear-gradient(to right, #7A88FF, #7AFFAF);
-  height: 100vh;
+  height: 100dvh;
 }
