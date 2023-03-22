@@ -1,9 +1,9 @@
 <script setup>
-import com from './layers/com.vue';
+import Layers from './layers/layers.vue';
 </script>
 
 <template>
-  <com></com>
+  <Layers></Layers>
 </template>
 
 <style>

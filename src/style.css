@@ -6,6 +6,8 @@
   --tiny-gap-y: 20px;
   --tiny-nameSize: 12px;
   --tiny-nameColor: #fff;
+  --img-bg: 34, 34, 34;
+  --img-text: 233, 233, 233;
 }
 
 .mx-context-menu {

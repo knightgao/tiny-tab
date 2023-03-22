@@ -9,7 +9,7 @@ import {menuJson} from '../menuConfig.js';
 </script>
 
 <template>
-    <div class="layer">
+    <div class="main">
         <com-grid>
             <com-div name="倒计时">
                 <Love></Love>
@@ -20,13 +20,12 @@ import {menuJson} from '../menuConfig.js';
                 <Nav :target-url="item.targetUrl" :icon="item.iconUrl"></Nav>
             </com-div>
         </com-grid>
-        
     </div>
 </template>
 
 
 <style lang="scss">
-.layer {
+.main {
     position: relative;
     display: grid;
     user-select: none;

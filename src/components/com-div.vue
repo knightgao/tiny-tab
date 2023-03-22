@@ -1,17 +1,26 @@
 <script setup >
-
+import { computed, inject, watch } from 'vue';
 const props = defineProps(['name'])
+
+
+const gridColumn = inject("gridColumn");
+const gridRow = inject("gridRow");
+
+const gridClass = computed(
+    () => {
+        return `grid-${gridColumn.value}-${gridRow.value}`
+    })
 
 </script>
 
 <template>
-    <div class="com-div">
+    <div class="com-div" :class="[gridClass]">
         <div class="com-div-border">
             <slot name="default"></slot>
         </div>
 
         <slot name="buttom">
-            <div class="com-div-text" v-if="props.name">{{ props.name }}</div>
+            <div class="com-div-text" :title="props.name" v-if="props.name">{{ props.name }}</div>
         </slot>
     </div>
 </template>
@@ -30,21 +39,43 @@ const props = defineProps(['name'])
         border: 1px solid #0000001a;
         box-shadow: 0 0 5px #0000001a;
         transition: .2s;
-        height: 60px;
         background-color: white;
         flex-grow: 10;
     }
 
+
     &-text {
-        flex: 0 0;
         text-align: center;
         margin-top: 5px;
-        height: 10px;
+        height: var(--tiny-gap-x);
         color: var(--tiny-nameColor);
         font-size: var(--tiny-nameSize);
         line-height: 1.1;
         filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, .8));
-        
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
     }
+}
+
+.grid-1-1 {
+    height: calc(var(--tiny-size) + var(--tiny-gap-x))
+}
+
+.grid-2-1 {
+    height: calc(var(--tiny-size) + var(--tiny-gap-x))
+}
+
+.grid-1-2 {
+    height: calc(var(--tiny-size)*2 + var(--tiny-gap-x))
+}
+
+.grid-2-2 {
+    height: calc(var(--tiny-size)*2 + var(--tiny-gap-x))
+}
+
+.grid-4-2 {
+    height: calc(var(--tiny-size)*2 + var(--tiny-gap-x))
 }
 </style>
