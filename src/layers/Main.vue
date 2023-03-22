@@ -35,5 +35,6 @@ import {menuJson} from '../menuConfig.js';
     grid-auto-flow: dense;
     grid-gap: var(--tiny-gap-x) var(--tiny-gap-y);
     padding: 2vh;
+    overflow-y: auto;
 }
 </style>

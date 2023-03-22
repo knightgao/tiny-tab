@@ -6,8 +6,8 @@ const isShow = ref(true);
 
 
 const gridSize = ref({
-    gridColumn:1,
-    gridRow:1,
+    gridColumn:2,
+    gridRow:2,
 })
 
 const comStyle = computed(
