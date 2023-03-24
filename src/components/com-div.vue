@@ -61,12 +61,13 @@ const gridStyle = computed(
         color: var(--tiny-nameColor);
         font-size: var(--tiny-nameSize);
         filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, .8));
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        display: block;
+        
         
         span{
             overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: block;
         }
     }
 }
